@@ -13,5 +13,6 @@ router.post("/user", userController.newUser);
 router.post("/login", loginController.newLogin);
 router.post("/chatHistory", chatController.postHistory);
 router.get("/chatHistory", chatController.getHistory);
+router.get("/chatHistory/:id", chatController.getMessagesFromUser);
 
 export default router;
