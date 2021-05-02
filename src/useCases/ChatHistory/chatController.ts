@@ -20,9 +20,8 @@ export default class ChatController {
   public async getMessagesFromUser(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      const resp = await Users.findAll({
-        where: { id },
-        include: [{ model: ChatHistory, as: "chat" }],
+      const resp = await ChatHistory.findAll({
+        where: { userId:id },
       });
       return res.json(resp);
     } catch (error) {
